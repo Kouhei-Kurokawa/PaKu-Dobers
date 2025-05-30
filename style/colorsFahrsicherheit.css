@@ -1,0 +1,13 @@
+:root {
+  /* Grundfarben */
+  --color-background: #1E2A38;        /* Tiefes Marineblau – statt Dunkelbraun */
+  --color-contrast: #4B5D67;          /* Stahlgrau-Blau – statt Pflaume */
+
+  /* Textfarben */
+  --color-text-primary: #A9D6E5;      /* Eisblau – statt Goldocker */
+  --color-text-secondary: #66A5AD;    /* Blaugrau/Türkis – statt Terrakotta */
+  --color-text-tertiary: #1E2A38;    /* Sehr helles Blau-Grau – statt Hellbeige */
+
+  /* Optional für Flächen oder Body-Text auf dunklem BG */
+  --color-surface: #C3D0DA;           /* Sehr helles Blau-Grau – statt Beige */
+}

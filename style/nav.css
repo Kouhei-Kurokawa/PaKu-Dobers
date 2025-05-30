@@ -1,0 +1,55 @@
+@import url('/style/colorsPaku.css');
+
+.sideLayout {
+    display: table-row;
+}
+
+#logo {
+    width: 100%;
+}
+
+.sideLayout {
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    margin-right: 1rem;
+}
+
+.sideContent {
+    flex-grow: 1;
+    padding: 0;
+}
+#logo {
+    width: 100%;
+}
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar li {
+    list-style: '> ';
+    list-style-position: inside;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: var(--color-contrast);
+}
+
+.sideContent {
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: inherit;
+}

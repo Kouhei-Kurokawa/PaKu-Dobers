@@ -1,0 +1,10 @@
+@import url('/style/colorsPaKu.css');
+
+#popup {
+    max-width: 35vh;
+    max-width: 30vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-background);
+}

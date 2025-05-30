@@ -1,0 +1,11 @@
+@import url('/style/colorsPaKu.css');
+
+
+body {
+    margin: 0;
+    font-size: 21px;
+    display: flex;
+    color: var(--color-text-tertiary);
+    background-color: var(--color-surface);
+}
+
