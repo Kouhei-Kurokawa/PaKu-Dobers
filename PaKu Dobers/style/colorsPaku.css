@@ -1,0 +1,13 @@
+:root {
+  /* Grundfarben */
+  --color-background: #402E32;
+  --color-contrast: #6E5160;
+
+  /* Textfarben */
+  --color-text-primary: #F2C572;
+  --color-text-secondary: #D47447;
+  --color-text-tertiary: #402E32;
+
+  /* Optional für Flächen oder Body-Text auf dunklem BG */
+  --color-surface: #D9C7B2;
+}
