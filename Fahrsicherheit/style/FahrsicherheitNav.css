@@ -37,6 +37,7 @@
     list-style-position: inside;
     padding: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar li:hover {

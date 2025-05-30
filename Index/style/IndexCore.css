@@ -1,54 +1,113 @@
 :root {
-  /* Grundfarben */
-  --color-background: #1D3B28;        /* Tiefes, natürliches Laubgrün – nicht braun, nicht blau */
-  --color-contrast: #3F6B4E;          /* Sattes Farn-Grün – klar, nicht matschig */
+    /* Grundfarben */
+    --color-background: #1D3B28;
+    /* Tiefes, natürliches Laubgrün – nicht braun, nicht blau */
+    --color-contrast: #3F6B4E;
+    /* Sattes Farn-Grün – klar, nicht matschig */
 
-  /* Textfarben */
-  --color-text-primary: #B4E197;      /* Frisches Pistaziengrün – freundlich, aber nicht grell */
-  --color-text-secondary: #7AC77B;    /* Lebendiges Grasgrün – harmonisch und satt */
-  --color-text-tertiary: #1D3B28;     /* Gleicher Ton wie BG für eingebettete Texte */
+    /* Textfarben */
+    --color-text-primary: #B4E197;
+    /* Frisches Pistaziengrün – freundlich, aber nicht grell */
+    --color-text-secondary: #7AC77B;
+    /* Lebendiges Grasgrün – harmonisch und satt */
+    --color-text-tertiary: #1D3B28;
+    /* Gleicher Ton wie BG für eingebettete Texte */
 
-  /* Optional für Flächen oder Body-Text auf dunklem BG */
-  --color-surface: #DCF3D9;           /* Sehr helles, sanftes Grün – weich und sauber */
+    /* Optional für Flächen oder Body-Text auf dunklem BG */
+    --color-surface: #DCF3D9;
+    /* Sehr helles, sanftes Grün – weich und sauber */
 }
 
 
+@media screen and (min-width: 1000px) {
+    body {
+        font-size: 21px;
+        color: var(--color-text-tertiary);
+        background-color: var(--color-surface);
+        margin: 0;
+        display: flex;
+    }
 
+    #logo {
+        left: 50%;
+        translate: -50%;
+        position: fixed;
+    }
 
-body {
-    font-size: 21px;
-    color: var(--color-text-tertiary);
-    background-color: var(--color-surface);
-    margin: 0;
-    display: flex;
+    .selection {
+        background: var(--color-background);
+        color: var(--color-text-primary);
+        min-height: 100vh;
+        margin: auto;
+        width: 40%;
+        max-width: 1200px;
+        text-align: center;
+        padding: 3rem;
+    }
+
+    h1 {
+        line-height: 1.2;
+        padding-bottom: 3rem;
+        color: var(--color-text-primary);
+    }
+
+    button {
+        background: var(--color-contrast);
+        color: var(--color-text-primary);
+        border: none;
+        padding: 7px 14px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-bottom: 5rem;
+    }
+
+    button:hover {
+        background: var(--color-text-secondary);
+        color: var(--color-text-tertiary);
+    }
+
 }
 
-#logo {
-    left: 50%;
-    translate: -50%;
-    position: fixed;
-}
+@media screen and (max-width: 999px) {
+    body {
+        font-size: 21px;
+        color: var(--color-text-tertiary);
+        background-color: var(--color-surface);
+        margin: 0;
+    }
 
-.selection {
-    background: var(--color-background);
-    color: var(--color-text-primary);
-    height: 100vh;
-    margin: auto;
-    width: 40%;
-    text-align: center;
-}
+    .selection {
+        position: relative;
+        background: var(--color-background);
+        color: var(--color-text-primary);
+        height: fit-content;
+        width: 100vw;
+        text-align: center;
+        height: 80vh;
+        padding-bottom: 50vh;
+    }
 
-button {
-    background: var(--color-contrast);
-    color: var(--color-text-primary);
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-button:hover {
-    background: var(--color-text-secondary);
-    color: var(--color-text-tertiary);
+    .selection>h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+    button {
+        background: var(--color-contrast);
+        color: var(--color-text-primary);
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background: var(--color-text-secondary);
+        color: var(--color-text-tertiary);
+    }
+
 }
