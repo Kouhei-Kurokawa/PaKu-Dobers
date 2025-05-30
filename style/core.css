@@ -1,5 +1,13 @@
-@import url('/style/colorsPaKu.css');
+:root {
+  --color-background: #402E32;
+  --color-contrast: #6E5160;
 
+  --color-text-primary: #F2C572;
+  --color-text-secondary: #D47447;
+  --color-text-tertiary: #402E32;
+
+  --color-surface: #D9C7B2;
+}
 
 body {
     margin: 0;
