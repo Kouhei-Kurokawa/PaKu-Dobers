@@ -27,7 +27,7 @@
 }
 
 body {
-    background-image: url('/Index/files/background2.svg');
+    background-image: url('files/background2.svg');
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 18px;
