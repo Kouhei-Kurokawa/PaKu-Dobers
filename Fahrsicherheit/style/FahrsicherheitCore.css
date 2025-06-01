@@ -8,3 +8,9 @@ body {
     background-color: var(--color-surface);
 }
 
+#main-content {
+    flex-grow: 1;
+    padding: 1rem;
+    margin-left: 250px;
+}
+

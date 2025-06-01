@@ -1,13 +1,10 @@
-
-.sideLayout {
-    display: table-row;
-}
-
 #logo {
     width: 100%;
 }
 
 .sideLayout {
+    position: fixed;
+    display: block;
     top: 0;
     left: 0;
     width: 250px;
