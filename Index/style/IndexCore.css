@@ -26,11 +26,26 @@
     --color-surface-P: #D9C7B2;
 }
 
+body {
+    background-image: url('/Index/files/background2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 18px;
+}
+
 #container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;    
     justify-content: space-evenly;
+    padding: auto;
+}
+
+#PaKu > img{
+    border: var(--color-text-primary-P) 2px solid;
+}
+#Fahrsicherheit > img{
+    border: var(--color-text-primary-F) 2px solid;
 }
 
 #container h1 {
@@ -40,20 +55,22 @@
 
 
 .selection {
+    margin: 1rem;
     padding: 1rem;
     width: 40vw;
     display: flex;
+    min-width: 350px;
     flex-direction: column;
     transition: background-color 0.3s, color 0.3s;
 }
 
 #PaKu {
-    background-color: var(--color-contrast-P);
+    background-color: var(--color-background-P);
     color: var(--color-text-primary-P);
 }
 
 #Fahrsicherheit {
-    background-color: var(--color-contrast-F);
+    background-color: var(--color-background-F);
     color: var(--color-text-primary-F);
 }
 
@@ -68,6 +85,7 @@ button {
     width: fit-content;
     padding: 0.5rem;
 }
+
 #PaKu button:hover {
     background-color: var(--color-surface-P);
     color: var(--color-text-secondary-P);
