@@ -1,113 +1,78 @@
 :root {
+    /* Farben für den Fahrsicherheits-Bereich */
     /* Grundfarben */
-    --color-background: #1D3B28;
-    /* Tiefes, natürliches Laubgrün – nicht braun, nicht blau */
-    --color-contrast: #3F6B4E;
-    /* Sattes Farn-Grün – klar, nicht matschig */
+    --color-background-F: #1E2A38;
+    --color-contrast-F: #4B5D67;
 
     /* Textfarben */
-    --color-text-primary: #B4E197;
-    /* Frisches Pistaziengrün – freundlich, aber nicht grell */
-    --color-text-secondary: #7AC77B;
-    /* Lebendiges Grasgrün – harmonisch und satt */
-    --color-text-tertiary: #1D3B28;
-    /* Gleicher Ton wie BG für eingebettete Texte */
+    --color-text-primary-F: #A9D6E5;
+    --color-text-secondary-F: #66A5AD;
+    --color-text-tertiary-F: #1E2A38;
 
     /* Optional für Flächen oder Body-Text auf dunklem BG */
-    --color-surface: #DCF3D9;
-    /* Sehr helles, sanftes Grün – weich und sauber */
+    --color-surface-F: #C3D0DA;
+
+    /* Farben für den PaKu-Bereich */
+    /* Grundfarben */
+    --color-background-P: #402E32;
+    --color-contrast-P: #6E5160;
+
+    /* Textfarben */
+    --color-text-primary-P: #F2C572;
+    --color-text-secondary-P: #D47447;
+    --color-text-tertiary-P: #402E32;
+
+    /* Optional für Flächen oder Body-Text auf dunklem BG */
+    --color-surface-P: #D9C7B2;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    justify-content: space-evenly;
+}
+
+#container h1 {
+    text-align: center;
+    width: 100%;
 }
 
 
-@media screen and (min-width: 1000px) {
-    body {
-        font-size: 21px;
-        color: var(--color-text-tertiary);
-        background-color: var(--color-surface);
-        margin: 0;
-        display: flex;
-    }
-
-    #logo {
-        left: 50%;
-        translate: -50%;
-        position: fixed;
-    }
-
-    .selection {
-        background: var(--color-background);
-        color: var(--color-text-primary);
-        min-height: 100vh;
-        margin: auto;
-        width: 40%;
-        max-width: 1200px;
-        text-align: center;
-        padding: 3rem;
-    }
-
-    h1 {
-        line-height: 1.2;
-        padding-bottom: 3rem;
-        color: var(--color-text-primary);
-    }
-
-    button {
-        background: var(--color-contrast);
-        color: var(--color-text-primary);
-        border: none;
-        padding: 7px 14px;
-        font-size: 1em;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-        margin-bottom: 5rem;
-    }
-
-    button:hover {
-        background: var(--color-text-secondary);
-        color: var(--color-text-tertiary);
-    }
-
+.selection {
+    padding: 1rem;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-@media screen and (max-width: 999px) {
-    body {
-        font-size: 21px;
-        color: var(--color-text-tertiary);
-        background-color: var(--color-surface);
-        margin: 0;
-    }
+#PaKu {
+    background-color: var(--color-contrast-P);
+    color: var(--color-text-primary-P);
+}
 
-    .selection {
-        position: relative;
-        background: var(--color-background);
-        color: var(--color-text-primary);
-        height: fit-content;
-        width: 100vw;
-        text-align: center;
-        height: 80vh;
-        padding-bottom: 50vh;
-    }
+#Fahrsicherheit {
+    background-color: var(--color-contrast-F);
+    color: var(--color-text-primary-F);
+}
 
-    .selection>h1 {
-        margin: 0;
-        font-size: 2.5em;
-    }
-
-    button {
-        background: var(--color-contrast);
-        color: var(--color-text-primary);
-        border: none;
-        padding: 10px 20px;
-        font-size: 1.2em;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-        background: var(--color-text-secondary);
-        color: var(--color-text-tertiary);
-    }
-
+button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-align: left;
+    width: fit-content;
+    padding: 0.5rem;
+}
+#PaKu button:hover {
+    background-color: var(--color-surface-P);
+    color: var(--color-text-secondary-P);
+}
+#Fahrsicherheit button:hover {
+    background-color: var(--color-surface-F);
+    color: var(--color-text-secondary-F);
 }
