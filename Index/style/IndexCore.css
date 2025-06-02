@@ -27,49 +27,50 @@
 }
 
 body {
-    background-image: url('../files/background2.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-background-F);
+    color: var(--color-text-primary-F);
     font-size: 18px;
 }
 
 #container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;    
-    justify-content: space-evenly;
-    padding: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-#PaKu > img{
+#PaKu>img {
     border: var(--color-text-primary-P) 2px solid;
 }
-#Fahrsicherheit > img{
+
+#Fahrsicherheit>img {
     border: var(--color-text-primary-F) 2px solid;
 }
 
-#container h1 {
-    text-align: center;
-    width: 100%;
-}
-
-
 .selection {
-    margin: 1rem;
-    padding: 1rem;
-    width: 40vw;
     display: flex;
-    min-width: 350px;
     flex-direction: column;
+    margin: 0;
+    padding: 2rem;
+    min-width: 350px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 #PaKu {
+    width: 50vw;
+    height: 100vh;
     background-color: var(--color-background-P);
     color: var(--color-text-primary-P);
 }
 
 #Fahrsicherheit {
+    width: 50vw;
+    height: 100vh;
     background-color: var(--color-background-F);
     color: var(--color-text-primary-F);
 }
@@ -90,6 +91,7 @@ button {
     background-color: var(--color-surface-P);
     color: var(--color-text-secondary-P);
 }
+
 #Fahrsicherheit button:hover {
     background-color: var(--color-surface-F);
     color: var(--color-text-secondary-F);
