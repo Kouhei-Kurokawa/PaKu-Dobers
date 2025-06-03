@@ -29,18 +29,20 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: var(--color-background-F);
-    color: var(--color-text-primary-F);
     font-size: 18px;
+    overflow: hidden;
+    display: flex;
 }
 
 #container {
+    position: absolute;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    flex-grow: 1;
+    height: 100%;
+    width: 100vw;
     margin: 0;
 }
 
@@ -56,23 +58,27 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    box-sizing: border-box;
     padding: 2rem;
     min-width: 350px;
     transition: background-color 0.3s, color 0.3s;
+
 }
 
 #PaKu {
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     background-color: var(--color-background-P);
     color: var(--color-text-primary-P);
+    min-width: 500px;
 }
 
 #Fahrsicherheit {
     width: 50vw;
-    height: 100vh;
+    height: 100%;
     background-color: var(--color-background-F);
     color: var(--color-text-primary-F);
+    min-width: 500px;
 }
 
 button {
