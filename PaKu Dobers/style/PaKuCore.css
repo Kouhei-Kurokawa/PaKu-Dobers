@@ -10,14 +10,6 @@ body {
   transition: all 0.3s ease-in-out; /* smooth transitions for all properties */
 }
 
-/* Main container style */
-#main-content {
-    padding: 20px; /* make sure there is some space between other elements and the edges */
-    background-color: var(--color-surface);
-    flex-grow: 1; /* allow this to grow and fill available space */
-    overflow: auto; /* allow scrolling if content overflows */
-}
-
 /* Navigator style */
 #logo {
     aspect-ratio: 2/1;
@@ -51,3 +43,10 @@ body {
 }
 
 
+/* Main container style */
+#main-content {
+    padding: 20px; /* make sure there is some space between other elements and the edges */
+    background-color: var(--color-surface);
+    flex-grow: 1; /* allow this to grow and fill available space */
+    overflow: auto; /* allow scrolling if content overflows */
+}

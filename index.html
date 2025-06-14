@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>www.dobers.net</title>
-    <link rel="stylesheet" href="Index/style/IndexCore.css">
-    <script src="index/script/index.Core.js"></script>
+    <title>Test Page</title>
+    <link rel="stylesheet" href="Index/style/indexCore.css">
 </head>
-
 <body>
-    <div id="container">
-        <div class="selection" id="PaKu">
-            <img src="PaKu Dobers/files/logo/PaKu.svg" alt="">
-            <!-- <h3>PaKu Dobers</h3> -->
-            <p>Paku Dobers ist ein familiärer Kurier-Dienst. Er bietet Dienstleistungen im Bereich Kurier-, Express- und
-                Postdienst vorrangig für Geschäftskunden an.</p>
-            <button onclick="window.location.href='PaKuCore.html'">Hier hin!</button>
-            <button onclick="window.location.href='test.html'">Test</button>
-        </div>
-        <div class="selection" id="Fahrsicherheit">
-            <img src="Fahrsicherheit/files/logo/Fahrsicherheit.svg" alt="">
-            <!-- <h3>Fahrsicherheit</h3> -->
-            <p></p>
-            <button onclick="window.location.href='FahrsicherheitCore.html'">Hier hin!</button>
+    <div id="navigator">
+        <button>Info</button>
+        <button>Leistungen</button>
+        <button>Referenzen</button>
+        <button onclick="window.location.href='Paku Dobers/PaKuCore.html'">PaKu Dobers</button> <!-- kommt zu den Leistungen -->
+        <button onclick="window.location.href='Fahrsicherheit/FahrsicherheitCore.html'">Fahrsicherheit</button> <!-- kommt zu den Leistungen -->
+        <button onclick="scrollToElement('AGB')" class="navigation">AGB</button>
+        <button onclick="contactUsWindow()">Erreichen sie uns</button>
+    </div>
+    <div id="contactUsWindow">
+        <div id="contactUsContent">
+            <h2>Kontaktieren Sie uns</h2>
+            <label for="bugOrCommentSelect">Bitte wählen Sie eine Option:</label>
+            <select name="bugOrComment" id="bugOrCommentSelect">
+                <option value="" disabled selected hidden>Bitte wählen</option>
+                <option value="bug">Bug melden</option>
+                <option value="comment">Kommentar hinterlassen</option>
+            </select>
+            <form onsubmit="contactUs(); return false;">
+                <textarea id="commentBox" placeholder="Ihre Nachricht" required></textarea>
+                <button type="submit">Absenden</button>
+            </form>
         </div>
     </div>
-</body>
+    <div id="main-content">
+        <h1 id="welcome">Willkommen bei PaKu Dobers</h1>
 
+    </div>
+</body>
 </html>

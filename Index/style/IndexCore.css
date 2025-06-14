@@ -1,104 +1,150 @@
-:root {
-    /* Farben für den Fahrsicherheits-Bereich */
-    /* Grundfarben */
-    --color-background-F: #1E2A38;
-    --color-contrast-F: #4B5D67;
+@import url('/Fahrsicherheit/style/colorsFahrsicherheit.css');
 
-    /* Textfarben */
-    --color-text-primary-F: #A9D6E5;
-    --color-text-secondary-F: #66A5AD;
-    --color-text-tertiary-F: #1E2A38;
-
-    /* Optional für Flächen oder Body-Text auf dunklem BG */
-    --color-surface-F: #C3D0DA;
-
-    /* Farben für den PaKu-Bereich */
-    /* Grundfarben */
-    --color-background-P: #402E32;
-    --color-contrast-P: #6E5160;
-
-    /* Textfarben */
-    --color-text-primary-P: #F2C572;
-    --color-text-secondary-P: #D47447;
-    --color-text-tertiary-P: #402E32;
-
-    /* Optional für Flächen oder Body-Text auf dunklem BG */
-    --color-surface-P: #D9C7B2;
+/* ========== Reset & Base Styles ========== */
+* {
+    transition: all 0.3s ease-in-out;
+    /* smooth transitions for all properties */
 }
 
 body {
+    display: flex;
+    /* use flexbox for layout */
+    flex-direction: column;
     margin: 0;
-    padding: 0;
-    font-size: 18px;
+    /* flush to screen edges */
+    height: 100vh;
+    /* full viewport height */
     overflow: hidden;
-    display: flex;
+    /* prevent body scroll */
 }
 
-#container {
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    height: 100%;
-    width: 100vw;
-    margin: 0;
-}
-
-#PaKu>img {
-    border: var(--color-text-primary-P) 2px solid;
-}
-
-#Fahrsicherheit>img {
-    border: var(--color-text-primary-F) 2px solid;
-}
-
-.selection {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 2rem;
-    min-width: 350px;
-    transition: background-color 0.3s, color 0.3s;
-
-}
-
-#PaKu {
-    width: 50vw;
-    height: 100%;
-    background-color: var(--color-background-P);
-    color: var(--color-text-primary-P);
-    min-width: 500px;
-}
-
-#Fahrsicherheit {
-    width: 50vw;
-    height: 100%;
-    background-color: var(--color-background-F);
-    color: var(--color-text-primary-F);
-    min-width: 500px;
-}
-
-button {
+/* ========== Navigator Styles ========== */
+.userComment {
     background-color: transparent;
     border: none;
-    color: inherit;
+    color: var(--color-text-primary);
     font-size: 1.2rem;
+    margin-inline: 0.8rem;
+    border-radius: 10px;
+    flex-grow: 0;
+    height: 2.5rem;
+}
+
+#navigator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--color-background);
+    color: white;
+    font-size: 21px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+#navigator>* {
+    background-color: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    margin-inline: 0.8rem;
+    border-radius: 10px;
+    flex-grow: 1;
+    height: 2.5rem;
+}
+
+#navigator>*:hover {
+    background-color: var(--color-contrast);
     cursor: pointer;
-    padding: 0.5rem;
-    text-align: left;
-    width: fit-content;
-    padding: 0.5rem;
+    text-underline-offset: 0.2rem;
 }
 
-#PaKu button:hover {
-    background-color: var(--color-surface-P);
-    color: var(--color-text-secondary-P);
+
+/* ========== Logo Styles ========== */
+#logo {
+    aspect-ratio: 2/1;
+    width: 100%;
 }
 
-#Fahrsicherheit button:hover {
-    background-color: var(--color-surface-F);
-    color: var(--color-text-secondary-F);
+/* ========== Contact us Window ========== */
+#contactUsWindow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-primary);
+}
+
+#contactUsContent {
+    height: 50%;
+    width: 50%;
+    background-color: var(--color-background);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+#contactUsContent > h2 {
+    position: fixed;
+    background-color: var(--color-background);
+    border-radius: 15px;
+    top: 5%;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+#contactUsContent > select {
+    width: 80%;
+    height: 2.5rem;
+    border-radius: 10px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-contrast);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#contactUsContent form {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+}
+#contactUsContent form textarea {
+    height: 80%;
+    border-radius: 10px;
+    padding: 0.5rem;
+    background-color: var(--color-surface);
+    color: black;
+    border: 1px solid var(--color-contrast);
+}
+#contactUsContent form button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: var(--color-contrast);
+    color: var(--color-text-primary);
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ========== Main Content Styles ========== */
+#main-content {
+    background-color: var(--color-surface);
+    flex-grow: 1;
+    overflow: auto;
+    padding: 2rem;
+}
+
+#welcome {
+    text-align: center;
 }
