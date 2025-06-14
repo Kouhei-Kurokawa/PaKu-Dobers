@@ -16,7 +16,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 5831011.swh.strato-hosting.eu
-          username: ${{ secrets.GitHubDeploy }}   # ⬅️ Nur Buchstaben/Zahlen/Unterstriche
+          username: ${{ secrets.sftp_GitHubDeploy }}   # ⬅️ Nur Buchstaben/Zahlen/Unterstriche
           password: ${{ secrets.zaxtew-zamPyf-1nunsa }}
           protocol: sftp                          # ⬅️ GANZ WICHTIG für Strato
           port: 22
