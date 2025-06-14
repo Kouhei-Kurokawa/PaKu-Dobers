@@ -15,7 +15,7 @@ jobs:
       - name: Deploy via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ssh.strato.de   # ⬅️ Das ist der SERVERNAME von Strato
+          server: 5831011.swh.strato-hosting.eu
           username: ${{ secrets.GitHubDeploy }}   # ⬅️ Nur Buchstaben/Zahlen/Unterstriche
           password: ${{ secrets.zaxtew-zamPyf-1nunsa }}
           protocol: sftp                          # ⬅️ GANZ WICHTIG für Strato
