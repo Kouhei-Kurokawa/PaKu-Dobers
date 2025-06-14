@@ -17,7 +17,7 @@ jobs:
         with:
           server: 5831011.swh.strato-hosting.eu
           username: ${{ secrets.sftp_GitHubDeploy }}   # ⬅️ Nur Buchstaben/Zahlen/Unterstriche
-          password: ${{ secrets.zaxtew-zamPyf-1nunsa }}
+          password: ${{ secrets.zaxtewzamPyf1nunsa }}
           protocol: sftp                          # ⬅️ GANZ WICHTIG für Strato
           port: 22
           local-dir: ./                           # ⬅️ Wo deine Dateien im Repo liegen
