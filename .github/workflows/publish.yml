@@ -1,23 +1,32 @@
-name: Test SCP Upload
+name: Deploy to Strato via SFTP
 
 on:
   push:
     branches:
-      - main  # Oder dein Branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Upload test file via SCP
-        uses: appleboy/scp-action@master
-        with:
-          host: ssh.strato.de
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: 22
-          source: "testfile.txt"
-          target: "/htdocs/"   # Oder deinen echten Webroot
+    - name: Install sshpass
+      run: sudo apt-get update && sudo apt-get install -y sshpass
+
+    - name: Upload files via SFTP (User 1)
+      run: |
+        sshpass -p 'zaxtewzamPyf1nunsa' sftp -o StrictHostKeyChecking=no sftp_GitHubDeploy@ssh.strato.de <<EOF
+        put -r * 
+        bye
+        EOF
+
+    # Fallback User 2 - Falls User 1 nicht klappt, kann man manuell diesen Schritt aktivieren
+    # - name: Upload files via SFTP (User 2)
+    #   run: |
+    #     sshpass -p 'zaxtewzamPyf1nunsa' sftp -o StrictHostKeyChecking=no 5831011.swh.strato-hosting.eu@ssh.strato.de <<EOF
+    #     put -r *
+    #     bye
+    #     EOF
