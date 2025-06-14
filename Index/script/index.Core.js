@@ -1,5 +1,5 @@
 function contactUsWindow() {
-    document.getElementById('contactUsWindow').style.display = 'block';
+    document.getElementById('contactUsWindow').style.display = 'flex';
 }
 function contactUs() {
     const bugOrComment = document.getElementById('bugOrCommentSelect').value;
@@ -12,7 +12,7 @@ function contactUs() {
 
     text = bugOrComment === "bug" ? "🐞 Bug Report: " + text : "💬 Comment: " + text;
 
-    fetch('/api/send-discord.php', { // oder send-discord.js falls du Node nutzt
+    fetch('./Index/script/sendDiscord.php', { // oder send-discord.js falls du Node nutzt
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

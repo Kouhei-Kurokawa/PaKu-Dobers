@@ -15,7 +15,7 @@ if (!isset($data['message'])) {
 }
 
 // Webhook URL (GEHEIM HALTEN – nicht im Frontend)
-$webhook_url = 'https://discord.com/api/webhooks/DEIN/WEBHOOK/URL';
+$webhook_url = 'https://discord.com/api/webhooks/1383534561467568189/M805JHZ_AWG9-lk3iogWLuJjqQ1cv60-4v19rBWIgUKM_BbL22IQN-UMH63IPRDcgEAM';
 
 $payload = json_encode([
     'content' => $data['message']
