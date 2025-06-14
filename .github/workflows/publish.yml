@@ -1,23 +1,23 @@
-name: Deploy to Strato
+name: Test SCP Upload
 
 on:
   push:
     branches:
-      - main
+      - main  # Oder dein Branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
 
-      - name: Copy files via SCP (SFTP)
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Upload test file via SCP
         uses: appleboy/scp-action@master
         with:
           host: ssh.strato.de
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
-          source: "./"
-          target: "/htdocs/"
+          source: "testfile.txt"
+          target: "/htdocs/"   # Oder deinen echten Webroot
