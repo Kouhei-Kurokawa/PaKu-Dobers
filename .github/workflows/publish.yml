@@ -1,25 +1,25 @@
-name: Deploy to Strato
+name: Deploy to Strato via SFTP
 
 on:
   push:
     branches:
-      - main  # oder main, je nachdem wie dein Branch heißt
+      - main
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
 
-      - name: Deploy via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ssh.strato.de
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: sftp                        
-          port: 22
-          local-dir: ./                           
-          server-dir: /htdocs/
-                
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Install sshpass
+      run: sudo apt-get update && sudo apt-get install -y sshpass
+
+    - name: Upload files to Strato via SFTP
+      run: |
+        sshpass -p "${{ secrets.SFTP_PASSWORD }}" sftp -o StrictHostKeyChecking=no "${{ secrets.SFTP_USERNAME }}@ssh.strato.de" <<EOF
+        cd /  # <-- Zielverzeichnis anpassen, falls nötig
+        put -r * 
+        bye
+        EOF
