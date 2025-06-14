@@ -18,7 +18,7 @@ jobs:
 
     - name: Upload files via SFTP (User 1)
       run: |
-        sshpass -p 'zaxtewzamPyf1nunsa' sftp -o StrictHostKeyChecking=no sftp_GitHubDeploy@ssh.strato.de <<EOF
+        sshpass -p 'Kremena2022!' sftp -o StrictHostKeyChecking=no 5831011.swh.strato-hosting.eu <<EOF
         put -r * 
         bye
         EOF
