@@ -3,23 +3,21 @@ name: Deploy to Strato
 on:
   push:
     branches:
-      - main  # oder main, je nachdem wie dein Branch heißt
+      - main
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Deploy via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy files via SFTP
+        uses: appleboy/sftp-action@v0.1.11
         with:
-          server: ssh.strato.de
+          host: ssh.strato.de
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: sftp                        
           port: 22
-          local-dir: ./                           
-          server-dir: /htdocs/
-                
+          source: "./"
+          target: "/htdocs/"
