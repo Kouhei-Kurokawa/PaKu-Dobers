@@ -3,7 +3,7 @@ name: Deploy to Strato
 on:
   push:
     branches:
-      - published  # oder main, je nachdem wie dein Branch heißt
+      - main  # oder main, je nachdem wie dein Branch heißt
 
 jobs:
   ftp-deploy:
