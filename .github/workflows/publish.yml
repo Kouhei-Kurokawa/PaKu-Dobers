@@ -1,0 +1,24 @@
+name: Deploy to Strato
+
+on:
+  push:
+    branches:
+      - published  # oder main, je nachdem wie dein Branch heißt
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ssh.strato.de   # ⬅️ Das ist der SERVERNAME von Strato
+          username: ${{ secrets.sftp_GitHubDeploy@dobers.eu }}   # ⬅️ Nur Buchstaben/Zahlen/Unterstriche
+          password: ${{ secrets.zaxtew-zamPyf-1nunsa }}
+          protocol: sftp                          # ⬅️ GANZ WICHTIG für Strato
+          port: 22
+          local-dir: ./                           # ⬅️ Wo deine Dateien im Repo liegen
+          server-dir: /htdocs/                    # ⬅️ Zielordner bei Strato (Standard)
