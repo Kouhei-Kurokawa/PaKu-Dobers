@@ -1,25 +1,53 @@
-:root {
-  --color-background: #402E32;
-  --color-contrast: #6E5160;
-
-  --color-text-primary: #F2C572;
-  --color-text-secondary: #D47447;
-  --color-text-tertiary: #402E32;
-
-  --color-surface: #D9C7B2;
-}
+@import url('colorsPaku.css');
 
 body {
-    margin: 0;
-    font-size: 21px;
-    display: flex;
-    color: var(--color-text-tertiary);
-    background-color: var(--color-surface);
+    display: flex; /* use flexbox for layout */
+    margin: 0px; /* make sure everything is flush to the screen edges */
+    height: 100vh; /* full viewport height */
+    overflow: hidden; /* prevent body scroll */
+}
+* {
+  transition: all 0.3s ease-in-out; /* smooth transitions for all properties */
 }
 
+/* Main container style */
 #main-content {
-    flex-grow: 1;
-    padding: 1rem;
-    margin-left: 250px;
+    padding: 20px; /* make sure there is some space between other elements and the edges */
+    background-color: var(--color-surface);
+    flex-grow: 1; /* allow this to grow and fill available space */
+    overflow: auto; /* allow scrolling if content overflows */
 }
+
+/* Navigator style */
+#logo {
+    aspect-ratio: 2/1;
+    width: 100%;
+}
+#navigator {
+    width: 250px; /* fixed width for the navigator */
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    box-sizing: border-box;
+    flex-shrink: 0; /* prevent shrinking */
+    font-size: 21px; /* set a base font size */
+}
+#navigator-list *{
+    padding: 0.8rem;
+    border-top: solid 1px var(--color-contrast);
+}
+#navigator-list > *:hover {
+    background-color: var(--color-contrast);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+#navigator-list > li{
+  list-style-position: inside;
+  text-indent: 20px;
+  margin: 0px;
+}
+#navigator-list {
+  padding: 0;
+}
+
 
