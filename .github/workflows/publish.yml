@@ -16,9 +16,10 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ssh.strato.de
-          username: ${{ secrets.GitHubDeploy }}   # ⬅️ Nur Buchstaben/Zahlen/Unterstriche
-          password: ${{ secrets.zaxtewzamPyf1nunsa }}
-          protocol: sftp                          # ⬅️ GANZ WICHTIG für Strato
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          protocol: sftp                        
           port: 22
-          local-dir: ./                           # ⬅️ Wo deine Dateien im Repo liegen
-          server-dir: /htdocs/                    # ⬅️ Zielordner bei Strato (Standard)
+          local-dir: ./                           
+          server-dir: /htdocs/
+                
